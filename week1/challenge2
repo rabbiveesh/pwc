@@ -1,0 +1,25 @@
+#! /usr/bin/perl
+#
+use v5.22;
+
+for (1..20) {
+  my $print = '';
+  $print .= 'fizz' unless $_ % 3;
+  $print .= 'buzz' unless $_ % 5;
+  $print = $_ unless $print;
+  say $print
+}
+
+say 'and now with map';
+
+map { 
+  my @print; 
+  push @print, 'fizz' unless $_ % 3; 
+  push @print, 'buzz' unless $_ % 5; 
+  push @print, $_ unless @print;
+  say join ' ', @print;
+} 1 .. 20;
+
+say 'and in one line';
+
+map { [ $_ % 3 ? '' : 'fizz', $_ % 5 ? '' : 'buzz', $_ ] } 1..20

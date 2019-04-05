@@ -1,0 +1,9 @@
+#! /usr/bin/perl
+
+use v5.22;
+my @to_table = ( 0 .. 9, 'A' .. 'Y');
+my %from_table; 
+while (my ($index, $element) = each @to_table) {
+  $from_table{$element} = $index;
+} 
+

@@ -1,0 +1,13 @@
+#! /usr/bin/perl
+
+use v5.22;
+
+$_ = 'Perl Weekly Challenge';
+#++$%  while s/e/E/;
+#say "$% -- $_";
+
+
+#say y/e/E/," -- $_"; die 5;
+
+say map { /e/ ? 'E' : $_ } split //, 'Perl Weekly Challenge';
+
